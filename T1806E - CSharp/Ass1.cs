@@ -8,7 +8,7 @@ namespace T1806E___CSharp
 {
     class Ass1
     {
-        public static void Main(string[] args)
+        public static void Main2(string[] args)
         {
             Console.WriteLine("nhap n=");
             int n = Console.Read();
@@ -37,3 +37,4 @@ namespace T1806E___CSharp
         }
     }
 }
+

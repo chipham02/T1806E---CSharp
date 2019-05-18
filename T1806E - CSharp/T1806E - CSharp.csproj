@@ -55,6 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Assignment 4\INews.cs" />
+    <Compile Include="Assignment 4\Menu.cs" />
+    <Compile Include="Assignment 4\News.cs" />
+    <Compile Include="Assignment 6\INews.cs" />
+    <Compile Include="Assignment 6\News.cs" />
+    <Compile Include="Session 6\MainClass.cs" />
+    <Compile Include="Session 6\Demo.cs" />
+    <Compile Include="Session 6\Program.cs" />
+    <None Include="Ass1.cs" />
+    <Compile Include="Assignment 5\ManagePhoneBook.cs" />
+    <Compile Include="Assignment 5\Phone.cs" />
+    <Compile Include="Assignment 5\PhoneNumber.cs" />
+    <Compile Include="Assignment 5\PhoneBook.cs" />
+    <Compile Include="Session 2\IHuman.cs" />
+    <None Include="SinhVien.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +78,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Session 2\Asian.cs" />
+    <Compile Include="Assignment 1\Cart.cs" />
+    <Compile Include="Session 2\Human.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assignment 1\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,5 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
