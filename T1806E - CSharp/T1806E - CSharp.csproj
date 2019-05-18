@@ -63,6 +63,8 @@
     <Compile Include="Session 6\MainClass.cs" />
     <Compile Include="Session 6\Demo.cs" />
     <Compile Include="Session 6\Program.cs" />
+    <Compile Include="Session 7\Demo.cs" />
+    <Compile Include="Session 7\Program.cs" />
     <None Include="Ass1.cs" />
     <Compile Include="Assignment 5\ManagePhoneBook.cs" />
     <Compile Include="Assignment 5\Phone.cs" />
