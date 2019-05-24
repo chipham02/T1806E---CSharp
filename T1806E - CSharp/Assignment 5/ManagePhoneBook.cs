@@ -4,69 +4,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T1806E___CSharp.Assignment_5
+namespace Baitap.Assignment_5
 {
-    public class ManagePhoneBook
+    class ManagePhoneBook
     {
-        public static void main(String[] args)
+        static void Main5(string[] args)
         {
-            PhoneBook phoneBook = new PhoneBook();
-            String name;
-            String phone;
-            bool start = true;
-            while (start)
-            {
-                Console.WriteLine("PHONE MANAGEMENT SYSTEM: ");
-                Console.WriteLine("1. Insert Phone");
-                Console.WriteLine("2. Remove Phone");
-                Console.WriteLine("3. Update Phone");
-                Console.WriteLine("4. Search Phone");
-                Console.WriteLine("5. Sort");
+            List<PhoneNumber> listDbs = new List<PhoneNumber>();
+            PhoneBook list = new PhoneBook(listDbs);
+            Boolean flag = true;
 
-                int menu = Int16.Parse(Console.ReadLine());
-                if (menu > 0 || menu < 5)
+            while (flag)
+            {
+                Console.WriteLine("1:Insert phone");
+                Console.WriteLine("2:Remove phone");
+                Console.WriteLine("3:Update  phone");
+                Console.WriteLine("4:Search phone");
+                int chon = Int32.Parse(Console.ReadLine());
+                switch (chon)
                 {
-                    switch (menu)
-                    {
-                        case 1:
-                            ManagePhoneBook.InputName();
-                            ManagePhoneBook.InputPhone();
-                            phoneBook.insertPhone(name, phone);
+                    case 1:
+                        {
+                            Console.WriteLine("Nhập tên");
+                            String name = Console.ReadLine();
+                            Console.WriteLine("Nhập sdt");
+                            String sdt = Console.ReadLine();
+                            list.insertPhone(name, sdt);
                             break;
-                        case 2:
-                            name = ManagePhoneBook.InputName();
-                            phoneBook.removePhone(name);
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("Nhập tên");
+                            String name = Console.ReadLine();
+                            list.removePhone(name);
                             break;
-                        case 3:
-                            name = ManagePhoneBook.InputName();
-                            phone = ManagePhoneBook.InputPhone();
-                            phoneBook.updatePhone(name, phone);
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("Nhập tên");
+                            String name = Console.ReadLine();
+                            Console.WriteLine("Nhập sdt mới");
+                            String sdt = Console.ReadLine();
+                            list.updatePhone(name, sdt);
                             break;
-                        case 4:
-                            name = ManagePhoneBook.InputName();
-                            phoneBook.SearchPhone(name);
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("Nhập tên");
+                            String name = Console.ReadLine();
+                            list.searchPhone(name);
                             break;
-                        case 5:
-                            phoneBook.Sort();
-                            break;
-                        case 6: start = false; break;
-                    }
+                        }
                 }
             }
-        }       
-  
-    public static void InputName()
-        {
-            Console.WriteLine("Input Name: ");
-            String string = Console.ReadLine();
-            return string;
-        }
-
-        public static void InputPhone()
-        {
-            Console.WriteLine("Input Phone: ");
-            String string = Console.ReadLine();
-            return string;
         }
     }
 }

@@ -4,74 +4,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T1806E___CSharp.Assignment_5
+namespace Baitap.Assignment_5
 {
-    public abstract class PhoneBook : Phone
+    class PhoneBook : Phone
     {
-        public List<PhoneNumber> PhoneList;
+        List<PhoneNumber> PhoneList = new List<PhoneNumber>();
 
-        public PhoneBook()
+        public PhoneBook(List<PhoneNumber> phoneList)
         {
-            this.PhoneList = new List<PhoneNumber>();
+            PhoneList = phoneList;
         }
 
-        public void InsertPhone(String name, String phone)
+        public void insertPhone(string name, string phone)
         {
-            for (int i = 0; i < this.PhoneList.size(); i++)
-            {
-                if (this.PhoneList.get(i).name.equals(name))
-                {
-                    if (!this.PhoneList.get(i).phone.equals(phone))
-                    {
-                        this.PhoneList.get(i).phone += ":" + phone;
-                        return;
-                    }
-                    return;
-                }
-            }
-            this.PhoneList.add(new PhoneNumber(name, phone));
-        }
 
-        public void RemovePhone(String name)
-        {
-            for (int i = 0; i < this.PhoneList.size(); i++)
+            foreach (PhoneNumber item in PhoneList)
             {
-                if (this.PhoneList.get(i).name.equals(name))
+                if (!item.Name.Equals(name))
                 {
-                    this.PhoneList.Remove(i);
+                    Console.WriteLine("Test");
+                    PhoneList.Add(new PhoneNumber(name, phone));
                 }
+                if (!item.Name.Equals(phone))
+                {
+                    item.Phone += phone;
+                }
+
             }
         }
 
-        public void UpdatePhone(String name, String newphone)
+        public void removePhone(string name)
         {
-            for (int i = 0; i < this.PhoneList.size(); i++)
+            foreach (PhoneNumber item in PhoneList)
             {
-                if (this.PhoneList.get(i).name.equals(name))
+                if (item.Equals(name))
                 {
-                    this.PhoneList.get(i) = newphone;
+                    PhoneList.Remove(item);
                 }
             }
         }
 
-        public void SearchPhone(String name)
+        public void searchPhone(string name)
         {
-            for (int i = 0; i < this.PhoneList.size(); i++)
+            foreach (ListDB item in PhoneList)
             {
-                if (this.PhoneList.get(i).name.equals(name))
+                if (item.Name.Equals(name))
                 {
-                    Console.WriteLine(this.PhoneList.get(i).name + " SĐT: " + this.PhoneList.get(i).phone);
-                    break;
+                    Console.WriteLine(item);
                 }
             }
         }
 
-        public void Sort()
+        public void updatePhone(string name, string newphone)
         {
-            Collections.sort(this.PhoneList);
-            for (PhoneNumber phoneNumber:this.PhoneList)
+            foreach (ListDB item in PhoneList)
             {
-                Console.WriteLine(phoneNumber.name + " SĐT: " + phoneNumber.phone);
+                if (item.Name.Equals(name))
+                {
+                    item.Phone = newphone;
+
+                }
             }
         }
     }

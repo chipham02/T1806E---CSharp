@@ -4,24 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T1806E___CSharp.Assignment_5
+namespace Baitap.Assignment_5
 {
-    public abstract class PhoneNumber : Comparer<PhoneNumber>
+    class PhoneNumber
     {
+        
+        private string name;
+        private string phone;
 
-        public String name;
-        public String phone;
+        public string Name
 
-        public PhoneNumber(String name, String phone)
         {
-            this.name = name;
-            this.phone = phone;
+
+            get { return name; }
+
+            set { name = value; }
+
+        }
+        public string Phone
+
+        {
+
+            get { return phone; }
+
+            set { phone = value; }
+
         }
 
-        public int compareTo(PhoneNumber phoneNumber)
+        public PhoneNumber(string name, string phone)
         {
-            return this.name.CompareTo(phoneNumber.name);
-        }
+            Name = name;
 
+            Phone = phone;
+        }
     }
 }
